@@ -11,24 +11,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b94ef1a2-3f1b-4d36-a7f2-4623ea6852c2" name="Changes" comment="stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Arkito_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Arkito_main_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Arkito_main_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/IntersectionDrawer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/StreetPrefabs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/VehiclePrefabs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arkitoDocumentation/blockDiagrams/gameObject/Blank diagram.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/arkitoDocumentation/blockDiagrams/gameObject/Blank diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/arkitoDocumentation/blockDiagrams/gameObject/transform/Blank diagram.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/arkitoDocumentation/blockDiagrams/gameObject/transform/Blank diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/arkitoDocumentation/blockDiagrams/sceneManagement/Blank diagram.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/arkitoDocumentation/blockDiagrams/sceneManagement/Blank diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/SampleAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/SampleAppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/SampleAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/ViatorumConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/sampleAssetLoaders/SampleAssetLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/sampleComponents/SampleComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/samplePrefabs/SamplePrefab1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/samplePrefabs/SamplePrefab2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/scenes/SampleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/scenes/IntersectionSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/renderer/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/renderer/AppWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Qpk7Jn1N2Za0HiXlIxVnPdAgWY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -85,6 +101,8 @@
       <workItem from="1688926607335" duration="7460000" />
       <workItem from="1688962300699" duration="5220000" />
       <workItem from="1689187554977" duration="306000" />
+      <workItem from="1693699103887" duration="44000" />
+      <workItem from="1693700744066" duration="5355000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />

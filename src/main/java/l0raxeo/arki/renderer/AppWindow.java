@@ -9,6 +9,8 @@ import l0raxeo.arki.engine.loaders.LoadingScreen;
 import l0raxeo.arki.engine.scenes.SceneManager;
 import l0raxeo.arki.engine.ui.GuiLayer;
 import l0raxeo.arki.renderer.postRenderGraphics.GraphicsDraw;
+import org.joml.Vector2f;
+import org.joml.Vector2i;
 
 import javax.swing.*;
 import java.awt.*;
@@ -230,6 +232,11 @@ public class AppWindow implements Runnable
     public JFrame getFrame()
     {
         return frame;
+    }
+
+    public Vector2f getWindowSize()
+    {
+        return new Vector2f(WINDOW_WIDTH, WINDOW_HEIGHT);
     }
 
     public static void setBackdrop(Color color)
