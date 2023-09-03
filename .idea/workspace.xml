@@ -10,18 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b94ef1a2-3f1b-4d36-a7f2-4623ea6852c2" name="Changes" comment="stuff">
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/IntersectionDrawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/StreetPrefabs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/VehiclePrefabs.java" afterDir="false" />
+    <list default="true" id="b94ef1a2-3f1b-4d36-a7f2-4623ea6852c2" name="Changes" comment="window setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/SampleAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/ViatorumConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/sampleAssetLoaders/SampleAssetLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/sampleComponents/SampleComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/samplePrefabs/SamplePrefab1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/samplePrefabs/SamplePrefab2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/scenes/SampleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/scenes/IntersectionSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/renderer/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/renderer/AppWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/ViatorumConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/ViatorumConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/IntersectionDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/IntersectionDrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/StreetPrefabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/StreetPrefabs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/scenes/IntersectionSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/scenes/IntersectionSimulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,9 +96,17 @@
       <workItem from="1688962300699" duration="5220000" />
       <workItem from="1689187554977" duration="306000" />
       <workItem from="1693699103887" duration="44000" />
-      <workItem from="1693700744066" duration="5355000" />
+      <workItem from="1693700744066" duration="8764000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="window setup">
+      <option name="closed" value="true" />
+      <created>1693721361013</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693721361013</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +125,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="some rigidbody shifting" />
-    <option name="LAST_COMMIT_MESSAGE" value="some rigidbody shifting" />
+    <MESSAGE value="window setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="window setup" />
   </component>
 </project>
