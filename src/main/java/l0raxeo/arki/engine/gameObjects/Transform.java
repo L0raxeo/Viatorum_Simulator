@@ -43,6 +43,15 @@ public class Transform
         return new Vector2f(noCamScreenPosition.x + Camera.xOffset(), noCamScreenPosition.y + Camera.yOffset());
     }
 
+    public void setScreenPosition(Vector2f position) {
+        this.noCamScreenPosition = position;
+    }
+
+    public void setScreenPosition(float x, float y) {
+        this.noCamScreenPosition.x = x;
+        this.noCamScreenPosition.y = y;
+    }
+
     public Vector2f getScreenCenterPosition()
     {
         return getScreenPosition().add(scale.x / 2, scale.y / 2);

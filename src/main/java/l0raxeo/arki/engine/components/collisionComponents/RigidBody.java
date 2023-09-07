@@ -22,6 +22,12 @@ public class RigidBody extends Component
         this.friction = friction;
     }
 
+    public RigidBody()
+    {
+        this.velocity = new Vector2f();
+        this.friction = 0;
+    }
+
     @Override
     public void update(double dt)
     {

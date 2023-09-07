@@ -9,7 +9,7 @@ import java.awt.*;
 public class GuiButton extends GuiComponent
 {
 
-    private final String text;
+    private String text;
     private final Font font;
     private final Color[] color;
     private final boolean solid;
@@ -31,10 +31,7 @@ public class GuiButton extends GuiComponent
     }
 
     @Override
-    public void update()
-    {
-
-    }
+    public void update() {}
 
     @Override
     public void render(Graphics g)
@@ -74,6 +71,14 @@ public class GuiButton extends GuiComponent
     {
         clicker.onClick();
         GuiLayer.selectComponent(null);
+    }
+
+    public String getText() {
+        return this.text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
 }

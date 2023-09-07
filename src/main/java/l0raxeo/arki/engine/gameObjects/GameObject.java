@@ -26,6 +26,15 @@ public class GameObject
         generateUid();
     }
 
+    public GameObject(String name, Transform transform, Component... components) {
+        this.name = name;
+        this.components = new ArrayList<>();
+        this.transform = transform;
+        this.components.addAll(List.of(components));
+
+        generateUid();
+    }
+
     public <T extends Component> T getComponent(Class<T> componentClass) {
         for (Component c : components) {
             if (componentClass.isAssignableFrom(c.getClass())) {
@@ -39,6 +48,18 @@ public class GameObject
         }
 
         return null;
+    }
+
+    public <T extends Component> List<T> getComponents(Class<T> componentClass) {
+        List<T> componentsOfTypeT = new ArrayList<>();
+
+        for (Component c : components) {
+            if (componentClass.isAssignableFrom(c.getClass())) {
+                componentsOfTypeT.add(componentClass.cast(c));
+            }
+        }
+
+        return componentsOfTypeT;
     }
 
     public Component getComponent(int uid)
@@ -127,6 +148,11 @@ public class GameObject
     {
         if (this.uid == -1)
             this.uid = ID_COUNTER++;
+    }
+
+    @Override
+    public String toString() {
+        return name + "_" + uid;
     }
 
 }

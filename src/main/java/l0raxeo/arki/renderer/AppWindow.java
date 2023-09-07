@@ -28,8 +28,8 @@ public class AppWindow implements Runnable
     public static String APP_TITLE;
     public static int WINDOW_WIDTH, WINDOW_HEIGHT;
     public static boolean IS_RESIZEABLE;
-    public static int UPS_CAP;
-    public static int FPS_CAP;
+    private static int UPS_CAP;
+    private static int FPS_CAP;
     public static Dimension WINDOW_SIZE;
     private Thread thread;
     private boolean running = false;
@@ -125,10 +125,31 @@ public class AppWindow implements Runnable
         canvas.addMouseMotionListener(mouseListener);
     }
 
+    private static double timePerUpdate;
+    private static double timePerRender;
+
+    public static void setUpsCapDuringRuntime(int upsCap) {
+        UPS_CAP = upsCap;
+        timePerUpdate = 1000000000D / UPS_CAP;
+    }
+
+    public static void setFpsCapDuringRuntime(int fpsCap) {
+        FPS_CAP = fpsCap;
+        timePerRender = 1000000000D / FPS_CAP;
+    }
+
+    public static int getUpsCap() {
+        return UPS_CAP;
+    }
+
+    public static int getFpsCap() {
+        return FPS_CAP;
+    }
+
     private void loop()
     {
-        double timePerUpdate = 1000000000D / UPS_CAP;
-        double timePerRender = 1000000000D / FPS_CAP;
+        timePerUpdate = 1000000000D / UPS_CAP;
+        timePerRender = 1000000000D / FPS_CAP;
 
         double deltaUpdate = 0;
         double deltaRender = 0;

@@ -22,8 +22,11 @@ public class GuiLayer
     {
         for (GuiComponent c : guiComponents)
         {
-            c.hovering = c.bounds.contains(mousePos.x, mousePos.y);
-            c.update();
+            if (c.isEnabled())
+            {
+                c.hovering = c.bounds.contains(mousePos.x, mousePos.y);
+                c.update();
+            }
         }
     }
 
@@ -36,7 +39,8 @@ public class GuiLayer
     public static void render(Graphics g)
     {
         for (GuiComponent c : guiComponents)
-            c.render(g);
+            if (c.isEnabled())
+                c.render(g);
     }
 
     /**
@@ -55,6 +59,10 @@ public class GuiLayer
     public static void removeGuiComponent(GuiComponent c)
     {
         guiComponents.remove(c);
+    }
+
+    public static List<GuiComponent> getAllGuiComponents() {
+        return guiComponents;
     }
 
     public static GuiComponent getGuiComponent(String name)
