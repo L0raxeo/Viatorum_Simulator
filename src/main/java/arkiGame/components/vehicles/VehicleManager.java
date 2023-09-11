@@ -37,7 +37,10 @@ public class VehicleManager extends Component {
             scene.vehiclesToAdd.add(vehicle);
         }
 
-        // THIS CODE SPAWNS VEHICLES FOR ONE PATH ONLY
+//        if (scene.getGameObjects().size()> 2)
+//            return;
+//
+//        // THIS CODE SPAWNS VEHICLES FOR ONE PATH ONLY
 //        StreetPath path1 = enterPaths[1];
 //        StreetPath path2 = exitPaths[2];
 //        boolean canSpawnVehicle = /*path1.getVehicleOnBlock(-1) == null &&*/path1.getVehicleOnBlock(0) == null;
@@ -83,16 +86,6 @@ public class VehicleManager extends Component {
 
     public void onSimulationStart() {
         isRunning = true;
-
-        // test code
-//        Path path1 = enterPaths[0];
-//        Path path2 = exitPaths[1];
-//        boolean canSpawnVehicle = path1.getVehicleOnBlock(-1) == null && path1.getVehicleOnBlock(0) == null;
-//        if (canSpawnVehicle) {
-//            GameObject curVehicle = VehiclePrefabs.fabricateSedan(path1, path2);
-//            path1.addVehicleToPath(curVehicle);
-//            scene.vehiclesToAdd.add(curVehicle);
-//        }
     }
 
     public void onSimulationStop() {

@@ -18,5 +18,6 @@ public interface Vehicle {
     StreetPath getPath2();
 
     void setCurrentPath(Path path);
+    Path getCurrentPath();
 
 }

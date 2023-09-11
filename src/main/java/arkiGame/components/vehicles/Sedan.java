@@ -34,7 +34,7 @@ public class Sedan extends Component implements Vehicle {
         this.path1 = path1;
         this.path2 = path2;
         this.currentPath = path1;
-        this.pivotPath = new PivotPath(findPivotPoint(), path2);
+        this.pivotPath = new PivotPath(this, findPivotPoint(), path2);
         SimulationMenu.stopSimulationEvent.subscribe(this, "onSimulationStop");
     }
 
@@ -89,6 +89,11 @@ public class Sedan extends Component implements Vehicle {
         if (debugging) {
             pivotPath.debugRender(g);
         }
+
+        if (currentPath.equals(pivotPath)) {
+            g.setColor(Color.RED);
+            g.fillRect(pivotPath.getNextBlockPosition(gameObject, this).x, pivotPath.getNextBlockPosition(gameObject, this).y, 10, 10);
+        }
     }
 
     public void onSimulationStop() {
@@ -113,6 +118,11 @@ public class Sedan extends Component implements Vehicle {
 
     public void setCurrentPath(Path path) {
         this.currentPath = path;
+    }
+
+    @Override
+    public Path getCurrentPath() {
+        return currentPath;
     }
 
     @Override

@@ -11,32 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b94ef1a2-3f1b-4d36-a7f2-4623ea6852c2" name="Changes" comment="drawing intersection outline">
-      <change afterPath="$PROJECT_DIR$/assets/samples/textures/gear_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/menu/SimulationMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/stoplights/Stoplight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/stoplights/StoplightSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/Path.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/PivotPath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/StreetPath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/EngineType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Sedan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/VehicleManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/VehicleType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/StreetPrefabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/StreetPrefabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/VehiclePrefabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/prefabs/VehiclePrefabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/scenes/IntersectionSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/scenes/IntersectionSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/components/collisionComponents/RigidBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/components/collisionComponents/RigidBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/gameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/gameObjects/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/gameObjects/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/gameObjects/Transform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/gameObjects/prefabs/Prefabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/gameObjects/prefabs/Prefabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/scenes/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/ui/GuiLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/ui/GuiLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/ui/components/GuiButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/ui/components/GuiButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/ui/components/GuiComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/ui/components/GuiComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/ui/components/GuiTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/ui/components/GuiTextField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/renderer/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/renderer/AppWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/PivotPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/PivotPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Sedan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Sedan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/VehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/VehicleManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +107,13 @@
       <workItem from="1693803681723" duration="24897000" />
       <workItem from="1693881638993" duration="43779000" />
       <workItem from="1694046899404" duration="138000" />
-      <workItem from="1694047050703" duration="4168000" />
+      <workItem from="1694047050703" duration="4848000" />
+      <workItem from="1694132745122" duration="2999000" />
+      <workItem from="1694204796540" duration="17000" />
+      <workItem from="1694221860251" duration="23000" />
+      <workItem from="1694221896762" duration="606000" />
+      <workItem from="1694234045839" duration="1204000" />
+      <workItem from="1694320538146" duration="10796000" />
     </task>
     <task id="LOCAL-00002" summary="window setup">
       <option name="closed" value="true" />
@@ -146,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693724737626</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="drawing intersection outline">
+      <option name="closed" value="true" />
+      <created>1694056593829</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694056593829</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
