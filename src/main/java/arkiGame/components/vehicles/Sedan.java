@@ -92,7 +92,7 @@ public class Sedan extends Component implements Vehicle {
 
         if (currentPath.equals(pivotPath)) {
             g.setColor(Color.RED);
-            g.fillRect(pivotPath.getNextBlockPosition(gameObject, this).x, pivotPath.getNextBlockPosition(gameObject, this).y, 10, 10);
+            g.fillRect(pivotPath.getNextBlockPosition().x - 5, pivotPath.getNextBlockPosition().y - 5, 10, 10);
         }
     }
 

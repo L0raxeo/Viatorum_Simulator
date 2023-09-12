@@ -19,6 +19,8 @@ public class PivotPath implements Path {
     private final Vector2i pivotPoint;
     private final Vector2i endPoint;
 
+    private Vector2i nextBlockPosition = new Vector2i();
+
     private boolean passedPivotPoint = false;
 
     public PivotPath(Vehicle vehicle, Vector2i pivotPoint, StreetPath destination) {
@@ -29,6 +31,8 @@ public class PivotPath implements Path {
 
     @Override
     public Vector2i getMoveCoordinateInstructions(GameObject gameObject) {
+        Vector2i moveCoordResult;
+
         if (gameObject.transform.getScreenPosition().x == endPoint.x && gameObject.transform.getScreenPosition().y == endPoint.y) {
             for (Component c : gameObject.getAllComponents()) {
                 if (Vehicle.class.isAssignableFrom(c.getClass())) {
@@ -42,16 +46,34 @@ public class PivotPath implements Path {
             passedPivotPoint = true;
 
         if (!passedPivotPoint) {
-            return pivotPoint;
+            moveCoordResult = pivotPoint;
         } else {
-            return endPoint;
+            moveCoordResult = endPoint;
         }
+
+        updateNextBlockPosition(gameObject, moveCoordResult);
+
+        for (GameObject gameObject1 : SceneManager.getActiveScene().getGameObjects()) {
+            for (Component component1 : gameObject1.getAllComponents()) {
+                if (!Vehicle.class.isAssignableFrom(component1.getClass()))
+                    continue;
+
+                Vehicle vehicle1 = (Vehicle) component1;
+
+                Vector2i vehicleNextBlockPos = vehicle.getPivotPath().getNextBlockPosition();
+                Vector2i vehicle1NextBlockPos = vehicle1.getPivotPath().getNextBlockPosition();
+                if (vehicleNextBlockPos.x == vehicle1NextBlockPos.x && vehicleNextBlockPos.y == vehicle1NextBlockPos.y) {
+                    moveCoordResult = new Vector2i((int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
+                }
+            }
+        }
+
+        return moveCoordResult;
     }
 
-    public Vector2i getNextBlockPosition(GameObject gameObject, Vehicle vehicle) {
+    public void updateNextBlockPosition(GameObject gameObject, Vector2i moveCoordinateInstructions) {
 
-        Vector2i nextBlock = getMoveCoordinateInstructions(gameObject);
-        Vector2i rawDirection = new Vector2i((int) (nextBlock.x - gameObject.transform.getScreenPosition().x), (int) (nextBlock.y - gameObject.transform.getScreenPosition().y));
+        Vector2i rawDirection = new Vector2i((int) (moveCoordinateInstructions.x - gameObject.transform.getScreenPosition().x), (int) (moveCoordinateInstructions.y - gameObject.transform.getScreenPosition().y));
         Vector2i velocity = new Vector2i((rawDirection.x != 0 ? rawDirection.x / Math.abs(rawDirection.x) : 0), (rawDirection.y != 0 ? rawDirection.y / Math.abs(rawDirection.y) : 0)); // direction in terms of 1 and 0
 
         Vector2i currentPosition = new Vector2i((int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
@@ -59,6 +81,10 @@ public class PivotPath implements Path {
         nextBlockPosition.x = (((currentPosition.x + ((BLOCK_WIDTH / 2) * velocity.x)) / BLOCK_WIDTH) * BLOCK_WIDTH) + (BLOCK_WIDTH / 2);
         nextBlockPosition.y = (((currentPosition.y + ((BLOCK_HEIGHT / 2) * velocity.y)) / BLOCK_HEIGHT) * BLOCK_HEIGHT) + (BLOCK_HEIGHT / 2);
 
+        this.nextBlockPosition = nextBlockPosition;
+    }
+
+    public Vector2i getNextBlockPosition() {
         return nextBlockPosition;
     }
 

@@ -14,8 +14,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/PivotPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/PivotPath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Sedan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Sedan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/VehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/VehicleManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Arkito" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -114,6 +129,7 @@
       <workItem from="1694221896762" duration="606000" />
       <workItem from="1694234045839" duration="1204000" />
       <workItem from="1694320538146" duration="10796000" />
+      <workItem from="1694539918539" duration="3079000" />
     </task>
     <task id="LOCAL-00002" summary="window setup">
       <option name="closed" value="true" />
