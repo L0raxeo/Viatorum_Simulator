@@ -50,6 +50,16 @@ public class GameObject
         return null;
     }
 
+    public <T> Component getInterfaceComponent(Class<T> interfaceClass) {
+        for (Component c : components) {
+            if (interfaceClass.isAssignableFrom(c.getClass())) {
+                return c;
+            }
+        }
+
+        return null;
+    }
+
     public <T extends Component> List<T> getComponents(Class<T> componentClass) {
         List<T> componentsOfTypeT = new ArrayList<>();
 

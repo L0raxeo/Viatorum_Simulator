@@ -3,12 +3,17 @@ package l0raxeo.arki.engine.gameObjects;
 import l0raxeo.arki.renderer.AppWindow;
 import l0raxeo.arki.engine.scenes.Camera;
 import org.joml.Vector2f;
+import org.joml.Vector2i;
 import org.joml.Vector3f;
 import org.joml.Vector3i;
+
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
 public class Transform
 {
 
+    private Rectangle bounds;
     public Vector2f noCamScreenPosition;
     public Vector2f scale;
     private int zIndex = 0;
@@ -31,6 +36,14 @@ public class Transform
         this.scale = scale;
         this.rotation = rotation;
         this.zIndex = (int) worldPosition.z;
+
+        this.bounds = new Rectangle((int) getScreenPosition().x, (int) getScreenPosition().y, 60, 60);
+    }
+
+    public boolean boundsContain(Vector2i point) {
+        bounds.x = (int) getScreenPosition().x;
+        bounds.y = (int) getScreenPosition().y;
+        return bounds.contains(point.x, point.y);
     }
 
     public Vector2f worldPosition()

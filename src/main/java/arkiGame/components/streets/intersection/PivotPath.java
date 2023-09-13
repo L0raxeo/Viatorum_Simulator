@@ -1,18 +1,20 @@
 package arkiGame.components.streets.intersection;
 
-import arkiGame.components.vehicles.Sedan;
 import arkiGame.components.vehicles.Vehicle;
 import l0raxeo.arki.engine.components.Component;
 import l0raxeo.arki.engine.gameObjects.GameObject;
-import l0raxeo.arki.engine.scenes.SceneManager;
 import org.joml.Vector2i;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static arkiGame.scenes.IntersectionSimulation.BLOCK_HEIGHT;
 import static arkiGame.scenes.IntersectionSimulation.BLOCK_WIDTH;
 
 public class PivotPath implements Path {
+
+    public static List<GameObject> vehicleGosOnPivotPaths = new ArrayList<>();
 
     private final Vehicle vehicle;
 
@@ -34,12 +36,8 @@ public class PivotPath implements Path {
         Vector2i moveCoordResult;
 
         if (gameObject.transform.getScreenPosition().x == endPoint.x && gameObject.transform.getScreenPosition().y == endPoint.y) {
-            for (Component c : gameObject.getAllComponents()) {
-                if (Vehicle.class.isAssignableFrom(c.getClass())) {
-                    ((Vehicle) c).getPath2().addVehicleToPath(gameObject);
-                    ((Vehicle) c).setCurrentPath(((Vehicle) c).getPath2());
-                }
-            }
+            vehicle.getPath2().addVehicleToPath(gameObject);
+            vehicle.setCurrentPath(vehicle.getPath2());
         }
 
         if (gameObject.transform.getScreenPosition().x == pivotPoint.x && gameObject.transform.getScreenPosition().y == pivotPoint.y)
@@ -53,18 +51,16 @@ public class PivotPath implements Path {
 
         updateNextBlockPosition(gameObject, moveCoordResult);
 
-        for (GameObject gameObject1 : SceneManager.getActiveScene().getGameObjects()) {
-            for (Component component1 : gameObject1.getAllComponents()) {
-                if (!Vehicle.class.isAssignableFrom(component1.getClass()))
-                    continue;
+        // check for collisions
+        for (GameObject gameObject1 : PivotPath.vehicleGosOnPivotPaths) {
+            if (gameObject1.getUid() == gameObject.getUid())
+                continue;
 
-                Vehicle vehicle1 = (Vehicle) component1;
+            Vehicle vehicle1 = (Vehicle) gameObject1.getInterfaceComponent(Vehicle.class);
 
-                Vector2i vehicleNextBlockPos = vehicle.getPivotPath().getNextBlockPosition();
-                Vector2i vehicle1NextBlockPos = vehicle1.getPivotPath().getNextBlockPosition();
-                if (vehicleNextBlockPos.x == vehicle1NextBlockPos.x && vehicleNextBlockPos.y == vehicle1NextBlockPos.y) {
-                    moveCoordResult = new Vector2i((int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
-                }
+            boolean possibleCollisionDetected = gameObject1.transform.boundsContain(getNextBlockPosition()) /*|| (vehicle1.getPivotPath().getNextBlockPosition().equals(getNextBlockPosition().x, getNextBlockPosition().y))*/;
+            if (possibleCollisionDetected) {
+                moveCoordResult = new Vector2i((int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
             }
         }
 
@@ -72,7 +68,6 @@ public class PivotPath implements Path {
     }
 
     public void updateNextBlockPosition(GameObject gameObject, Vector2i moveCoordinateInstructions) {
-
         Vector2i rawDirection = new Vector2i((int) (moveCoordinateInstructions.x - gameObject.transform.getScreenPosition().x), (int) (moveCoordinateInstructions.y - gameObject.transform.getScreenPosition().y));
         Vector2i velocity = new Vector2i((rawDirection.x != 0 ? rawDirection.x / Math.abs(rawDirection.x) : 0), (rawDirection.y != 0 ? rawDirection.y / Math.abs(rawDirection.y) : 0)); // direction in terms of 1 and 0
 

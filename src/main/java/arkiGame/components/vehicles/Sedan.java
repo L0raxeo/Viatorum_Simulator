@@ -117,6 +117,13 @@ public class Sedan extends Component implements Vehicle {
     }
 
     public void setCurrentPath(Path path) {
+        if (path.equals(getPivotPath())) {
+            PivotPath.vehicleGosOnPivotPaths.add(gameObject);
+        }
+        else if (getCurrentPath().equals(getPivotPath())) {
+            PivotPath.vehicleGosOnPivotPaths.remove(gameObject);
+        }
+
         this.currentPath = path;
     }
 
