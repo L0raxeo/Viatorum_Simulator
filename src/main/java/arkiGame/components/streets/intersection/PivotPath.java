@@ -58,9 +58,16 @@ public class PivotPath implements Path {
 
             Vehicle vehicle1 = (Vehicle) gameObject1.getInterfaceComponent(Vehicle.class);
 
-            boolean possibleCollisionDetected = gameObject1.transform.boundsContain(getNextBlockPosition()) /*|| (vehicle1.getPivotPath().getNextBlockPosition().equals(getNextBlockPosition().x, getNextBlockPosition().y))*/;
-            if (possibleCollisionDetected) {
+            boolean collisionDetected = gameObject1.transform.boundsContain(getNextBlockPosition());
+            if (collisionDetected) {
                 moveCoordResult = new Vector2i((int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
+            }
+
+            boolean possibleCollisionDetected = (vehicle1.getPivotPath().getNextBlockPosition().equals(getNextBlockPosition().x, getNextBlockPosition().y));
+            if (possibleCollisionDetected) {
+                if (gameObject.getUid() > gameObject1.getUid()) {
+                    moveCoordResult = new Vector2i((int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
+                }
             }
         }
 

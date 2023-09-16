@@ -37,9 +37,7 @@ public class SimulationMenu extends Component {
                 3,
                 new Color[] {Color.GRAY, Color.DARK_GRAY},
                 new BufferedImage[] {AssetPool.getBufferedImage("gear_icon"), AssetPool.getBufferedImage("gear_icon")},
-                () -> {
-                    toggleConfig();
-                }
+                this::toggleConfig
         ));
 
         GuiLayer.addGuiComponent(new GuiTextField(
@@ -145,8 +143,13 @@ public class SimulationMenu extends Component {
 
     @Override
     public void update(double dt) {
-        if (KeyManager.onPress(KeyEvent.VK_ESCAPE))
+        if (KeyManager.onPress(KeyEvent.VK_ESCAPE)) {
             toggleConfig();
+        }
+
+        if (KeyManager.onPress('s')) {
+            startSimulationEvent.triggerEvent(this);
+        }
     }
 
     private void toggleConfig() {

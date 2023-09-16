@@ -130,8 +130,7 @@ public class StreetPath extends Component implements Path {
          if (nextBlock == -1) {
              removeVehicle(vehicle);
          }
-
-        return nextBlockPosition;
+        return getBlockPosition(5);
 //        return new Vector2i((int) vehicle.transform.getScreenPosition().x, (int) vehicle.transform.getScreenPosition().y);
     }
 

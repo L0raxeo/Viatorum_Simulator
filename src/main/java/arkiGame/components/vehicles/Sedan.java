@@ -4,7 +4,9 @@ import arkiGame.components.menu.SimulationMenu;
 import arkiGame.components.streets.intersection.Path;
 import arkiGame.components.streets.intersection.PivotPath;
 import arkiGame.components.streets.intersection.StreetPath;
+import l0raxeo.arki.engine.assetFiles.AssetPool;
 import l0raxeo.arki.engine.components.Component;
+import l0raxeo.arki.engine.ui.GuiText;
 import org.joml.Vector2f;
 import org.joml.Vector2i;
 
@@ -93,7 +95,17 @@ public class Sedan extends Component implements Vehicle {
         if (currentPath.equals(pivotPath)) {
             g.setColor(Color.RED);
             g.fillRect(pivotPath.getNextBlockPosition().x - 5, pivotPath.getNextBlockPosition().y - 5, 10, 10);
+            g.drawLine(pivotPath.getNextBlockPosition().x, pivotPath.getNextBlockPosition().y, (int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
         }
+
+        GuiText.drawString(
+                g,
+                String.valueOf(gameObject.getUid()),
+                (int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y,
+                true,
+                Color.WHITE,
+                AssetPool.getFont("default_font")
+        );
     }
 
     public void onSimulationStop() {
