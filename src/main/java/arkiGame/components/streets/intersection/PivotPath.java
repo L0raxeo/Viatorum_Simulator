@@ -24,23 +24,34 @@ public class PivotPath implements Path {
 
     private boolean passedPivotPoint = false;
 
+    private float initialRotation;
+
     public PivotPath(Vehicle vehicle, Vector2i pivotPoint, StreetPath destination) {
         this.vehicle = vehicle;
         this.pivotPoint = pivotPoint;
         this.endPoint = destination.getBlockPosition(0);
+        this.initialRotation = initialRotation;
     }
 
     @Override
     public Vector2i getMoveCoordinateInstructions(GameObject gameObject) {
         Vector2i moveCoordResult;
 
+        // updates initial rotation
+        if (!passedPivotPoint) initialRotation = gameObject.transform.rotation;
+
         if (gameObject.transform.getScreenPosition().x == endPoint.x && gameObject.transform.getScreenPosition().y == endPoint.y) {
             vehicle.getPath2().addVehicleToPath(gameObject);
             vehicle.setCurrentPath(vehicle.getPath2());
         }
 
-        if (gameObject.transform.getScreenPosition().x == pivotPoint.x && gameObject.transform.getScreenPosition().y == pivotPoint.y)
+        if (gameObject.transform.getScreenPosition().x == pivotPoint.x && gameObject.transform.getScreenPosition().y == pivotPoint.y) {
             passedPivotPoint = true;
+            // rotate if at pivote point
+            if (!(vehicle.getPath1().getBlockPosition(0).x == vehicle.getPath2().getBlockPosition(3).x || vehicle.getPath1().getBlockPosition(3).y == vehicle.getPath2().getBlockPosition(0).y)) {
+                gameObject.transform.rotation = initialRotation + 90;
+            }
+        }
 
         if (!passedPivotPoint) {
             moveCoordResult = pivotPoint;
