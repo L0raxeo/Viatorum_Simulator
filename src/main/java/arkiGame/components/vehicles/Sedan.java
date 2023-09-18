@@ -90,22 +90,22 @@ public class Sedan extends Component implements Vehicle {
 
         if (debugging) {
             pivotPath.debugRender(g);
-        }
 
-        if (currentPath.equals(pivotPath)) {
-            g.setColor(Color.RED);
-            g.fillRect(pivotPath.getNextBlockPosition().x - 5, pivotPath.getNextBlockPosition().y - 5, 10, 10);
-            g.drawLine(pivotPath.getNextBlockPosition().x, pivotPath.getNextBlockPosition().y, (int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
-        }
+            if (currentPath.equals(pivotPath)) {
+                g.setColor(Color.RED);
+                g.fillRect(pivotPath.getNextBlockPosition().x - 5, pivotPath.getNextBlockPosition().y - 5, 10, 10);
+                g.drawLine(pivotPath.getNextBlockPosition().x, pivotPath.getNextBlockPosition().y, (int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
+            }
 
-        GuiText.drawString(
-                g,
-                String.valueOf(gameObject.getUid()),
-                (int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y,
-                true,
-                Color.WHITE,
-                AssetPool.getFont("default_font")
-        );
+            GuiText.drawString(
+                    g,
+                    String.valueOf(gameObject.getUid()),
+                    (int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y,
+                    true,
+                    Color.WHITE,
+                    AssetPool.getFont("default_font")
+            );
+        }
     }
 
     public void onSimulationStop() {
