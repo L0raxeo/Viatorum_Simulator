@@ -30,7 +30,6 @@ public class PivotPath implements Path {
         this.vehicle = vehicle;
         this.pivotPoint = pivotPoint;
         this.endPoint = destination.getBlockPosition(0);
-        this.initialRotation = initialRotation;
     }
 
     @Override
