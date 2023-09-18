@@ -10,14 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b94ef1a2-3f1b-4d36-a7f2-4623ea6852c2" name="Changes" comment="drawing intersection outline">
-      <change afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/debugging/Highlighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/PivotPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/PivotPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/StreetPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/streets/intersection/StreetPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Sedan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arkiGame/components/vehicles/Sedan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/gameObjects/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/l0raxeo/arki/engine/gameObjects/Transform.java" afterDir="false" />
-    </list>
+    <list default="true" id="b94ef1a2-3f1b-4d36-a7f2-4623ea6852c2" name="Changes" comment="drawing intersection outline" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -68,7 +68,6 @@ public class PivotPath implements Path {
                 int distanceFromNextBlock1 = (int) (Math.abs(vehicle1.getPivotPath().getNextBlockPosition().x - gameObject1.transform.getScreenPosition().x) + Math.abs(vehicle1.getPivotPath().getNextBlockPosition().y - gameObject1.transform.getScreenPosition().y));
 
                 if (distanceFromNextBlock > distanceFromNextBlock1) {
-                    System.out.println(gameObject.getUid() + " | " + gameObject1.getUid());
                     moveCoordResult = new Vector2i((int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
                 }
             }
