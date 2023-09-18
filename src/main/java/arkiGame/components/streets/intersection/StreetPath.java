@@ -7,6 +7,7 @@ import arkiGame.components.vehicles.Vehicle;
 import l0raxeo.arki.engine.assetFiles.AssetPool;
 import l0raxeo.arki.engine.components.Component;
 import l0raxeo.arki.engine.gameObjects.GameObject;
+import l0raxeo.arki.engine.scenes.SceneManager;
 import l0raxeo.arki.engine.ui.GuiText;
 import org.joml.Vector2i;
 
@@ -87,7 +88,19 @@ public class StreetPath extends Component implements Path {
     }
 
     private Vector2i getEnterPathMoveCoordinateInstructions(GameObject vehicle, int nextBlock, Vector2i nextBlockPosition) {
-        boolean isBehindStoplight = nextBlock < 5;
+        // fail safe if behind a stoplight to stop collisions
+        boolean isBehindStoplight = nextBlock == 5;
+        if (isBehindStoplight) {
+            for (GameObject possibleCollision : SceneManager.getActiveScene().getGameObjects()) {
+                if (possibleCollision.getUid() == vehicle.getUid() || possibleCollision.hasComponent(StoplightSystem.class))
+                    continue;
+
+                if (possibleCollision.transform.boundsContain(nextBlockPosition)) {
+                    return new Vector2i((int) vehicle.transform.getScreenPosition().x, (int) vehicle.transform.getScreenPosition().y);
+                }
+            }
+        }
+
         if (nextBlock < 5) { // is behind the stoplight
             // check if space ahead is empty
             boolean isNextBlockEmpty = getVehicleOnBlock(nextBlock) == null;

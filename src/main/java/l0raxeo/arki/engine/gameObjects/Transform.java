@@ -41,9 +41,15 @@ public class Transform
     }
 
     public boolean boundsContain(Vector2i point) {
-        bounds.x = (int) getScreenPosition().x;
-        bounds.y = (int) getScreenPosition().y;
+        bounds.x = (int) getScreenPosition().x - 30;
+        bounds.y = (int) getScreenPosition().y - 30;
         return bounds.contains(point.x, point.y);
+    }
+
+    public Rectangle getBounds() {
+        bounds.x = (int) getScreenPosition().x - 30;
+        bounds.y = (int) getScreenPosition().y - 30;
+        return this.bounds;
     }
 
     public Vector2f worldPosition()

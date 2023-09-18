@@ -1,7 +1,6 @@
 package arkiGame.components.streets.intersection;
 
 import arkiGame.components.vehicles.Vehicle;
-import l0raxeo.arki.engine.components.Component;
 import l0raxeo.arki.engine.gameObjects.GameObject;
 import org.joml.Vector2i;
 
@@ -53,7 +52,7 @@ public class PivotPath implements Path {
 
         // check for collisions
         for (GameObject gameObject1 : PivotPath.vehicleGosOnPivotPaths) {
-            if (gameObject1.getUid() == gameObject.getUid())
+            if (gameObject1.getUid() == gameObject.getUid() || gameObject1.getName().equals("intersection"))
                 continue;
 
             Vehicle vehicle1 = (Vehicle) gameObject1.getInterfaceComponent(Vehicle.class);
@@ -65,7 +64,11 @@ public class PivotPath implements Path {
 
             boolean possibleCollisionDetected = (vehicle1.getPivotPath().getNextBlockPosition().equals(getNextBlockPosition().x, getNextBlockPosition().y));
             if (possibleCollisionDetected) {
-                if (gameObject.getUid() > gameObject1.getUid()) {
+                int distanceFromNextBlock = (int) (Math.abs(getNextBlockPosition().x - gameObject.transform.getScreenPosition().x) + Math.abs(getNextBlockPosition().y - gameObject.transform.getScreenPosition().y));
+                int distanceFromNextBlock1 = (int) (Math.abs(vehicle1.getPivotPath().getNextBlockPosition().x - gameObject1.transform.getScreenPosition().x) + Math.abs(vehicle1.getPivotPath().getNextBlockPosition().y - gameObject1.transform.getScreenPosition().y));
+
+                if (distanceFromNextBlock > distanceFromNextBlock1) {
+                    System.out.println(gameObject.getUid() + " | " + gameObject1.getUid());
                     moveCoordResult = new Vector2i((int) gameObject.transform.getScreenPosition().x, (int) gameObject.transform.getScreenPosition().y);
                 }
             }
