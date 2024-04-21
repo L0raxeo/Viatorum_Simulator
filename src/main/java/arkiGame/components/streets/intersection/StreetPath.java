@@ -114,7 +114,7 @@ public class StreetPath extends Component implements Path {
                     return nextBlockPosition;
                 }
                 case YELLOW -> {
-
+                    return nextBlockPosition;
                 }
                 case RED -> {
 
